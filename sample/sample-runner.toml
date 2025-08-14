@@ -1,0 +1,9 @@
+path = ["."]
+
+[[launcher]]
+executable = "notepad.exe"
+recursive = false
+
+[[watcher.child]]
+executable = "calc.exe"
+mods = ["sample"]

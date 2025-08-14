@@ -1,0 +1,2 @@
+name = "sample"
+entrypoint = "sample.py"
