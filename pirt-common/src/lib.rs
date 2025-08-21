@@ -1,3 +1,5 @@
+pub mod ipc;
+
 use serde::Deserialize;
 use std::path::PathBuf;
 
@@ -36,6 +38,8 @@ pub struct WatcherSpec {
 
 #[derive(Deserialize, Debug, Default)]
 pub struct ChildWatcherSpec {
-    pub executable: String,
+    pub glob: String,
     pub mods: Vec<String>,
 }
+
+pub type ConnectRpcFn = fn(String) -> bool;

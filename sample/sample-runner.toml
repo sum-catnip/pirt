@@ -5,5 +5,5 @@ executable = "notepad.exe"
 recursive = false
 
 [[watcher.child]]
-executable = "calc.exe"
+glob = "calc.exe"
 mods = ["sample"]

@@ -8,3 +8,5 @@ dll-syringe = "0.17.0"
 thiserror = "2.0.14"
 pirt-common = { path = "../pirt-common" }
 windows = { version = "0.61.3", features = ["Win32_System_Threading"] }
+glob = "0.3.3"
+log = "0.4.27"

@@ -3,7 +3,7 @@ use clap::{Parser, Subcommand};
 use glob::glob;
 use log::info;
 use pirt_common::{ChildWatcherSpec, LaunchSpec, ModSpec, RunnerSpec, WatcherSpec};
-use pirt_injector::attach_running;
+use pirt_injector::{Pirt, attach_running};
 use serde::Deserialize;
 use std::{
     fs::{self, File},
@@ -40,6 +40,12 @@ fn main() -> Result<()> {
     }
 
     log::debug!("modspecs: {:?}", specs);
+
+    let mut pirt = Pirt::new();
+    log::debug!("registering watchers");
+    for spec in runnerspec.watcher.child {
+        pirt.add_child_watcher(spec);
+    }
 
     Ok(())
 }
